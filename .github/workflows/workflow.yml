@@ -36,13 +36,13 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and Push department-service
+    - name: Build and Push department-services
       run: mvn package dockerfile:push --file department-service/pom.xml
       env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and Push cloud-config-server
+    - name: Build and Push cloud-config-servers
       run: mvn package dockerfile:push --file cloud-config-server/pom.xml
       env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
